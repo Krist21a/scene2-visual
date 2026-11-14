@@ -1,0 +1,140 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 480" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#1e293b"/>
+    </linearGradient>
+    <linearGradient id="cardBlue" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1e3a8a" stop-opacity="0.7"/>
+      <stop offset="100%" stop-color="#172554" stop-opacity="0.9"/>
+    </linearGradient>
+    <linearGradient id="cardTeal" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#115e59" stop-opacity="0.75"/>
+      <stop offset="100%" stop-color="#042f2e" stop-opacity="0.9"/>
+    </linearGradient>
+    <linearGradient id="cardIndigo" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#3730a3" stop-opacity="0.75"/>
+      <stop offset="100%" stop-color="#1e1b4b" stop-opacity="0.9"/>
+    </linearGradient>
+    <linearGradient id="cardAmber" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#92400e" stop-opacity="0.75"/>
+      <stop offset="100%" stop-color="#451a03" stop-opacity="0.9"/>
+    </linearGradient>
+    <linearGradient id="cardEmerald" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#065f46" stop-opacity="0.75"/>
+      <stop offset="100%" stop-color="#022c22" stop-opacity="0.9"/>
+    </linearGradient>
+    <marker id="arrow" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 8 5 L 0 9 z" fill="#38bdf8"/>
+    </marker>
+    <marker id="arrowBack" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 8 5 L 0 9 z" fill="#f59e0b"/>
+    </marker>
+  </defs>
+
+  <rect width="1080" height="480" rx="16" fill="url(#bgGrad)"/>
+  <rect x="16" y="16" width="1048" height="448" rx="12" fill="none" stroke="#334155" stroke-width="1.5"/>
+
+  <!-- Header -->
+  <text x="40" y="54" fill="#f8fafc" font-family="system-ui, -apple-system, 'Segoe UI', 'Microsoft YaHei', sans-serif" font-size="22" font-weight="700">Scene2 视觉抓取系统 · 全闭环感知—规划—控制—验收架构</text>
+  <text x="40" y="80" fill="#94a3b8" font-family="system-ui, -apple-system, 'Segoe UI', 'Microsoft YaHei', sans-serif" font-size="13">零真值读取 (Zero Ground-Truth) · 纯标定 RGB-D + 公开 URDF + 实时关节/夹爪反馈 · 冻结版本 v48</text>
+  <rect x="850" y="36" width="190" height="32" rx="16" fill="#0284c7" fill-opacity="0.2" stroke="#38bdf8" stroke-width="1"/>
+  <text x="945" y="57" text-anchor="middle" fill="#38bdf8" font-family="monospace" font-size="12" font-weight="600">SHA256: a300fa68...125cdb</text>
+
+  <!-- Stage 1: Perception -->
+  <g transform="translate(35, 110)">
+    <rect width="188" height="250" rx="10" fill="url(#cardBlue)" stroke="#3b82f6" stroke-width="1.5"/>
+    <rect x="14" y="14" width="68" height="22" rx="4" fill="#2563eb"/>
+    <text x="48" y="29" text-anchor="middle" fill="#ffffff" font-family="system-ui, sans-serif" font-size="11" font-weight="700">STAGE 01</text>
+    <text x="14" y="58" fill="#f8fafc" font-family="system-ui, 'Microsoft YaHei', sans-serif" font-size="16" font-weight="700">多视角 RGB-D 感知</text>
+    <text x="14" y="78" fill="#93c5fd" font-family="monospace" font-size="11">perception / wrist / bin</text>
+    <line x1="14" y1="90" x2="174" y2="90" stroke="#1d4ed8" stroke-width="1"/>
+    <text x="14" y="112" fill="#e2e8f0" font-family="system-ui, 'Microsoft YaHei', sans-serif" font-size="12">• 头部 + 双腕部相机同步</text>
+    <text x="14" y="134" fill="#e2e8f0" font-family="system-ui, 'Microsoft YaHei', sans-serif" font-size="12">• 35ms 关节历史最近邻对齐</text>
+    <text x="14" y="156" fill="#e2e8f0" font-family="system-ui, 'Microsoft YaHei', sans-serif" font-size="12">• 射线-底面交点破解透明箱壁</text>
+    <text x="14" y="178" fill="#e2e8f0" font-family="system-ui, 'Microsoft YaHei', sans-serif" font-size="12">• C 件红柄与金属长杆 RANSAC</text>
+    <text x="14" y="200" fill="#e2e8f0" font-family="system-ui, 'Microsoft YaHei', sans-serif" font-size="12">• 旋转箱腔多边形拟合 (15mm内缩)</text>
+    <text x="14" y="232" fill="#60a5fa" font-family="monospace" font-size="11">耗时占比: 53.8s (53 calls)</text>
+  </g>
+
+  <!-- Arrow 1 -> 2 -->
+  <line x1="223" y1="235" x2="245" y2="235" stroke="#38bdf8" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- Stage 2: Grasp & Payload -->
+  <g transform="translate(248, 110)">
+    <rect width="188" height="250" rx="10" fill="url(#cardTeal)" stroke="#14b8a6" stroke-width="1.5"/>
+    <rect x="14" y="14" width="68" height="22" rx="4" fill="#0d9488"/>
+    <text x="48" y="29" text-anchor="middle" fill="#ffffff" font-family="system-ui, sans-serif" font-size="11" font-weight="700">STAGE 02</text>
+    <text x="14" y="58" fill="#f8fafc" font-family="system-ui, 'Microsoft YaHei', sans-serif" font-size="16" font-weight="700">抓取搜索与持物建模</text>
+    <text x="14" y="78" fill="#5eead4" font-family="monospace" font-size="11">task / payload</text>
+    <line x1="14" y1="90" x2="174" y2="90" stroke="#0f766e" stroke-width="1"/>
+    <text x="14" y="112" fill="#e2e8f0" font-family="system-ui, 'Microsoft YaHei', sans-serif" font-size="12">• A → B → C 优先级分拣策略</text>
+    <text x="14" y="134" fill="#e2e8f0" font-family="system-ui, 'Microsoft YaHei', sans-serif" font-size="12">• 浅层优先 + 粗/细航向回退</text>
+    <text x="14" y="156" fill="#e2e8f0" font-family="system-ui, 'Microsoft YaHei', sans-serif" font-size="12">• 抬升后重估掌内 3D 载荷姿态</text>
+    <text x="14" y="178" fill="#e2e8f0" font-family="system-ui, 'Microsoft YaHei', sans-serif" font-size="12">• 0.1/99.9 分位独立锁定杆尖</text>
+    <text x="14" y="200" fill="#e2e8f0" font-family="system-ui, 'Microsoft YaHei', sans-serif" font-size="12">• 跨侧目标双臂交接互锁机</text>
+    <text x="14" y="232" fill="#2dd4bf" font-family="monospace" font-size="11">防遮挡截断: 保留源端全长</text>
+  </g>
+
+  <!-- Arrow 2 -> 3 -->
+  <line x1="436" y1="235" x2="458" y2="235" stroke="#38bdf8" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- Stage 3: Constrained Optimization -->
+  <g transform="translate(461, 110)">
+    <rect width="188" height="250" rx="10" fill="url(#cardIndigo)" stroke="#818cf8" stroke-width="1.5"/>
+    <rect x="14" y="14" width="68" height="22" rx="4" fill="#4f46e5"/>
+    <text x="48" y="29" text-anchor="middle" fill="#ffffff" font-family="system-ui, sans-serif" font-size="11" font-weight="700">STAGE 03</text>
+    <text x="14" y="58" fill="#f8fafc" font-family="system-ui, 'Microsoft YaHei', sans-serif" font-size="16" font-weight="700">约束规划与释放优化</text>
+    <text x="14" y="78" fill="#a5b4fc" font-family="monospace" font-size="11">release_optimizer / settling</text>
+    <line x1="14" y1="90" x2="174" y2="90" stroke="#4338ca" stroke-width="1"/>
+    <text x="14" y="112" fill="#e2e8f0" font-family="system-ui, 'Microsoft YaHei', sans-serif" font-size="12">• SLSQP 连续关节姿态寻优</text>
+    <text x="14" y="134" fill="#e2e8f0" font-family="system-ui, 'Microsoft YaHei', sans-serif" font-size="12">• 倾斜长杆低端支点落稳预测</text>
+    <text x="14" y="156" fill="#e2e8f0" font-family="system-ui, 'Microsoft YaHei', sans-serif" font-size="12">• SAT 分离轴开爪下落净空检验</text>
+    <text x="14" y="178" fill="#e2e8f0" font-family="system-ui, 'Microsoft YaHei', sans-serif" font-size="12">• ≥81 点/321 点全包络扫掠防撞</text>
+    <text x="14" y="200" fill="#e2e8f0" font-family="system-ui, 'Microsoft YaHei', sans-serif" font-size="12">• C 件落稳目标余量提升至 7.05mm</text>
+    <text x="14" y="232" fill="#818cf8" font-family="monospace" font-size="11">耗时占比: 999.8s (2431 calls)</text>
+  </g>
+
+  <!-- Arrow 3 -> 4 -->
+  <line x1="649" y1="235" x2="671" y2="235" stroke="#38bdf8" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- Stage 4: Control & Execution -->
+  <g transform="translate(674, 110)">
+    <rect width="180" height="250" rx="10" fill="url(#cardAmber)" stroke="#f59e0b" stroke-width="1.5"/>
+    <rect x="14" y="14" width="68" height="22" rx="4" fill="#d97706"/>
+    <text x="48" y="29" text-anchor="middle" fill="#ffffff" font-family="system-ui, sans-serif" font-size="11" font-weight="700">STAGE 04</text>
+    <text x="14" y="58" fill="#f8fafc" font-family="system-ui, 'Microsoft YaHei', sans-serif" font-size="16" font-weight="700">闭环控制与安全护栏</text>
+    <text x="14" y="78" fill="#fcd34d" font-family="monospace" font-size="11">control / release</text>
+    <line x1="14" y1="90" x2="166" y2="90" stroke="#b45309" stroke-width="1"/>
+    <text x="14" y="112" fill="#e2e8f0" font-family="system-ui, 'Microsoft YaHei', sans-serif" font-size="12">• 标准 MPC → WBC 10Hz 通道</text>
+    <text x="14" y="134" fill="#e2e8f0" font-family="system-ui, 'Microsoft YaHei', sans-serif" font-size="12">• 单步 ≤0.012rad / 跟踪 ≤0.25rad</text>
+    <text x="14" y="156" fill="#e2e8f0" font-family="system-ui, 'Microsoft YaHei', sans-serif" font-size="12">• 释放前 1.5mm / 0.005rad 对齐</text>
+    <text x="14" y="178" fill="#e2e8f0" font-family="system-ui, 'Microsoft YaHei', sans-serif" font-size="12">• 连续 3 帧实测 ≥5mm 余量放行</text>
+    <text x="14" y="200" fill="#e2e8f0" font-family="system-ui, 'Microsoft YaHei', sans-serif" font-size="12">• 末端插值安全退回走廊</text>
+    <text x="14" y="232" fill="#fbbf24" font-family="monospace" font-size="11">耗时占比: 1738.1s (231 calls)</text>
+  </g>
+
+  <!-- Arrow 4 -> 5 -->
+  <line x1="854" y1="235" x2="876" y2="235" stroke="#38bdf8" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- Stage 5: Visual Verification -->
+  <g transform="translate(879, 110)">
+    <rect width="166" height="250" rx="10" fill="url(#cardEmerald)" stroke="#10b981" stroke-width="1.5"/>
+    <rect x="14" y="14" width="68" height="22" rx="4" fill="#059669"/>
+    <text x="48" y="29" text-anchor="middle" fill="#ffffff" font-family="system-ui, sans-serif" font-size="11" font-weight="700">STAGE 05</text>
+    <text x="14" y="58" fill="#f8fafc" font-family="system-ui, 'Microsoft YaHei', sans-serif" font-size="16" font-weight="700">独立多帧视觉验收</text>
+    <text x="14" y="78" fill="#6ee7b7" font-family="monospace" font-size="11">settled_pair / audit</text>
+    <line x1="14" y1="90" x2="152" y2="90" stroke="#047857" stroke-width="1"/>
+    <text x="14" y="112" fill="#e2e8f0" font-family="system-ui, 'Microsoft YaHei', sans-serif" font-size="12">• 源位置消失 + 箱内计数增加</text>
+    <text x="14" y="134" fill="#e2e8f0" font-family="system-ui, 'Microsoft YaHei', sans-serif" font-size="12">• 完整凸包轮廓 ≥3mm 内边距</text>
+    <text x="14" y="156" fill="#e2e8f0" font-family="system-ui, 'Microsoft YaHei', sans-serif" font-size="12">• 双 C 独立金属轴分离重叠红柄</text>
+    <text x="14" y="178" fill="#e2e8f0" font-family="system-ui, 'Microsoft YaHei', sans-serif" font-size="12">• 生产 5 帧 + 独立新采 5 帧</text>
+    <text x="14" y="200" fill="#e2e8f0" font-family="system-ui, 'Microsoft YaHei', sans-serif" font-size="12">• 拒绝以历史账本替代终态画面</text>
+    <text x="14" y="232" fill="#34d399" font-family="monospace" font-size="11">耗时占比: 23.7s (14 calls)</text>
+  </g>
+
+  <!-- Feedback Loop Bar at Bottom -->
+  <path d="M 962 360 L 962 418 L 129 418 L 129 365" fill="none" stroke="#f59e0b" stroke-width="2" stroke-dasharray="6,4" marker-end="url(#arrowBack)"/>
+  <rect x="290" y="398" width="500" height="36" rx="18" fill="#1e293b" stroke="#f59e0b" stroke-width="1.5"/>
+  <text x="540" y="421" text-anchor="middle" fill="#fde68a" font-family="system-ui, 'Microsoft YaHei', sans-serif" font-size="13" font-weight="600">闭环重规划与防伪保护：姿态偏差 / 边距不足 / 遮挡缺失 → 立即拦截开爪并回退重观测</text>
+</svg>
