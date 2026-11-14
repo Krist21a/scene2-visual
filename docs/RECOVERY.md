@@ -63,7 +63,7 @@ git checkout 51b3defaf8c032957647c7aa193d1fa20daef1f3
 
 原工作区 Git 源码未修改；控制器二进制部署在 `devel/` 中，必须单独恢复本仓库提供的 A/C 文件。
 
-官方镜像下载地址取自该提交的 `readme.md`：
+官方镜像下载地址取自该提交的 `readme.md`。2026-11-15 在当前网络执行 HEAD 检查时发生 TLS 握手错误，因此本次未验证镜像下载成功；这不影响已上传的代码/附件，但 Docker 镜像需要另行从赛事方获取：
 
 ```bash
 wget https://kuavo.lejurobot.com/challenge_cup_2026/kuavo_challenge_cup_2026_latest.tar.gz
