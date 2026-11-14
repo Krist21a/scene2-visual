@@ -2,7 +2,7 @@
 
 本仓库保存当前 Scene2 代码、全部测试数据，以及删除本地项目后的恢复入口。仓库为私有仓库，下载时使用有权限的 GitHub 账号。
 
-当前状态：用户确认 seed0 实际完成 **A2/B2/C2，共 6/6**；程序因 C 箱内边界判定误记 5/6，日志停止于 2848.208 秒。原环境 202 项回归通过。最终十帧和 seed1/2 验证未完成，判定问题尚未修复。原始自动记录与人工确认分别保留，不改写失败回执。
+当前状态：用户确认 seed0 实际完成 **A2/B2/C2，共 6/6**；程序因 C 箱内边界判定误记 5/6，日志停止于 2848.208 秒。原环境 202 项回归通过。上传恢复验证中新建 Python 环境也通过 **202/202**；从 GitHub 回下载的源码和 wheel 已完成离线安装与 RGB-D 回放检查，见 [恢复验证记录](docs/validation/clean-recovery-result.json)。最终十帧和 seed1/2 验证未完成，判定问题尚未修复。原始自动记录与人工确认分别保留，不改写失败回执。
 
 ![本轮末帧](docs/assets/seed0-final.png)
 
@@ -10,6 +10,7 @@
 
 ```bash
 gh auth login
+gh auth setup-git
 gh repo clone Krist21a/scene2-visual
 cd scene2-visual
 git checkout scene2-v48-20261115

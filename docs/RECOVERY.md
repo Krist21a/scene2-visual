@@ -12,6 +12,7 @@
 
 ```bash
 gh auth login
+gh auth setup-git
 gh repo clone Krist21a/scene2-visual
 cd scene2-visual
 git checkout scene2-v48-20261115
@@ -34,7 +35,7 @@ bash recovery/run_tests.sh
 
 附带 wheels 仅对应 CPython 3.12 / Linux x86_64；Python 3.10–3.12 的其他兼容系统可不下载 wheels，直接联网安装 `requirements-offline.txt`。其他 Python 版本或架构未验证。
 
-原生产环境是 Python 3.12.12、NumPy 1.26.4、SciPy 1.15.3、OpenCV headless 4.13.0.92、PyYAML 6.0.3。其中 OpenCV 4.13 声明要求 NumPy>=2，而原环境实际使用 NumPy 1.26；这是原有依赖元数据不一致，已明确保留记录。离线恢复采用支持 NumPy 1.26 的 OpenCV 4.11.0.86，具体验证结果见 `docs/validation/clean-recovery-result.json`（发布前生成）。离线通过不等于新的多种子物理验收通过。
+原生产环境是 Python 3.12.12、NumPy 1.26.4、SciPy 1.15.3、OpenCV headless 4.13.0.92、PyYAML 6.0.3。其中 OpenCV 4.13 声明要求 NumPy>=2，而原环境实际使用 NumPy 1.26；这是原有依赖元数据不一致，已明确保留记录。离线恢复采用支持 NumPy 1.26 的 OpenCV 4.11.0.86，具体验证结果见 `docs/validation/clean-recovery-result.json`。离线通过不等于新的多种子物理验收通过。
 
 ## 4. Docker 镜像和官方工作区（未上传）
 

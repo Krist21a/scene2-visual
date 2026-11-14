@@ -1,0 +1,10 @@
+Looking in links: downloads/wheels
+Processing ./downloads/wheels/numpy-1.26.4-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (from -r requirements-offline.txt (line 4))
+Processing ./downloads/wheels/scipy-1.15.3-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (from -r requirements-offline.txt (line 5))
+Processing ./downloads/wheels/opencv_python_headless-4.11.0.86-cp37-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (from -r requirements-offline.txt (line 6))
+Processing ./downloads/wheels/pyyaml-6.0.3-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (from -r requirements-offline.txt (line 7))
+Installing collected packages: PyYAML, numpy, scipy, opencv-python-headless
+Successfully installed PyYAML-6.0.3 numpy-1.26.4 opencv-python-headless-4.11.0.86 scipy-1.15.3
+No broken requirements found.
+Verified policy: a300fa681d9f2ecc829b37883707d18d5645503cfae42a3a00c68d03f1125cdb files: 230
+Ready: bash recovery/run_tests.sh

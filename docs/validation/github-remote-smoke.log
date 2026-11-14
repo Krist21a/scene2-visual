@@ -1,0 +1,12 @@
+test_bins_are_floor_regions_not_transparent_wall_depth (test_perception.SensorReplayTests.test_bins_are_floor_regions_not_transparent_wall_depth) ... ok
+test_camera_translation_moves_detections (test_perception.SensorReplayTests.test_camera_translation_moves_detections) ... ok
+test_missing_red_handle_not_invented (test_perception.SensorReplayTests.test_missing_red_handle_not_invented) ... ok
+test_no_valid_depth_no_targets (test_perception.SensorReplayTests.test_no_valid_depth_no_targets) ... ok
+test_shaft_included_without_moving_handle_grasp (test_perception.SensorReplayTests.test_shaft_included_without_moving_handle_grasp) ... ok
+test_six_distinct_parts_three_bins (test_perception.SensorReplayTests.test_six_distinct_parts_three_bins) ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.447s
+
+OK
+{"status": "passed", "tests": 6, "source_sha256": "a300fa681d9f2ecc829b37883707d18d5645503cfae42a3a00c68d03f1125cdb", "origin": "fresh GitHub clone; dependencies installed with --no-index from GitHub Release wheels", "original_policy_or_sdk_modules_loaded": {}, "dependencies": {"numpy": "1.26.4", "scipy": "1.15.3", "cv2": "4.11.0", "yaml": "6.0.3"}}
