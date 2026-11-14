@@ -1,0 +1,14 @@
+{
+  "candidate_version": 48,
+  "source_sha256": "a300fa681d9f2ecc829b37883707d18d5645503cfae42a3a00c68d03f1125cdb",
+  "status": "passed",
+  "scope": "full unittest discovery: 43 focused plus 3 disjoint groups of 53; duration is sum of group times",
+  "tests": 202,
+  "duration_s": 2365.0060000000003,
+  "logs": [
+    "/media/krist/Data/scene2-visual/evidence/tests-focused-20261114-48.log",
+    "/media/krist/Data/scene2-visual/evidence/tests-stability-20261114-60-g0.log",
+    "/media/krist/Data/scene2-visual/evidence/tests-stability-20261114-60-g1.log",
+    "/media/krist/Data/scene2-visual/evidence/tests-stability-20261114-60-g2.log"
+  ]
+}

@@ -1,0 +1,82 @@
+{
+  "mode": "run",
+  "continued_scene": false,
+  "completed": [
+    {
+      "kind": "A",
+      "source": [
+        0.30588669143180636,
+        -0.33377156284197496,
+        -0.07043727035185421
+      ],
+      "bin": "A"
+    },
+    {
+      "kind": "A",
+      "source": [
+        0.32111193100648827,
+        -0.2631135832873146,
+        -0.06588820324255323
+      ],
+      "bin": "A"
+    },
+    {
+      "kind": "B",
+      "source": [
+        0.3111970326590561,
+        -0.06634546538935548,
+        -0.06638954702854286
+      ],
+      "bin": "B"
+    },
+    {
+      "kind": "B",
+      "source": [
+        0.31452222605102115,
+        0.019341794462105183,
+        -0.06651318779764026
+      ],
+      "bin": "B"
+    },
+    {
+      "kind": "C",
+      "source": [
+        0.3032731244623762,
+        0.22301634374104531,
+        -0.07061300718841403
+      ],
+      "bin": "C"
+    }
+  ],
+  "visual_success": false,
+  "task_success": null,
+  "source_sha256": "a300fa681d9f2ecc829b37883707d18d5645503cfae42a3a00c68d03f1125cdb",
+  "seed": 0,
+  "simulation_label": "accept-stability-20261114-48-six-s0-sim",
+  "requested_count": 6,
+  "error": "Release not visually confirmed in the correct bin",
+  "initial_bin_counts": {
+    "A": 0,
+    "B": 0,
+    "C": 0
+  },
+  "elapsed_s": 2848.2084776300035,
+  "phase_timings": {
+    "motion": {
+      "exclusive_s": 1738.125961747035,
+      "calls": 231
+    },
+    "perception": {
+      "exclusive_s": 53.791796077930485,
+      "calls": 53
+    },
+    "planning": {
+      "exclusive_s": 999.7949695820134,
+      "calls": 2431
+    },
+    "verification": {
+      "exclusive_s": 23.69370499701472,
+      "calls": 14
+    }
+  }
+}

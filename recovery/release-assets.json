@@ -1,0 +1,25 @@
+{
+  "repository": "Krist21a/scene2-visual",
+  "release": "scene2-v48-20261115",
+  "docker_images_included": false,
+  "assets": [
+    {
+      "kind": "runtime",
+      "name": "scene2-v48-runtime.tar.gz",
+      "size": 119818113,
+      "sha256": "91b8f0368a935d5fb2741d0d6c7668bf6ddf92149d048eb4844a203d38984b09"
+    },
+    {
+      "kind": "wheels",
+      "name": "scene2-v48-offline-wheels.tar.gz",
+      "size": 104903290,
+      "sha256": "83577acaedaf7e08397123cbe85d47c494f0bd3b05987055a6791b61268b1b83"
+    },
+    {
+      "kind": "evidence",
+      "name": "scene2-v48-evidence.tar.gz",
+      "size": 109753127,
+      "sha256": "9a64ebf794146d31bb3956da71d57428302c1d253b22ad9aabb9d2a40a72987d"
+    }
+  ]
+}

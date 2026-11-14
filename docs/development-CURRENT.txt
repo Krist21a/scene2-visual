@@ -1,0 +1,16 @@
+Scene2 已停止（用户要求，2026-11-15）
+
+已按用户要求停止。版本48本轮用户确认实际6/6；自动落箱判定误记5/6，2848.208秒。末段七帧均检测到两件C，其中一件被3mm箱内边界检查排除。202项回归通过；判定修正、最终十帧与seed1/2尚未完成。
+
+当前冻结源码：a300fa681d9f2ecc829b37883707d18d5645503cfae42a3a00c68d03f1125cdb
+无后续物理回合或回归测试在运行。自动系列失败后已复位，未启动seed1/2。
+用户确认：reports/scene2-20261114/user-confirmation-v48.json
+边界诊断：evidence/c48-landing-diagnosis.json
+原始summary/events保留原自动判定，不改写成成功回执。
+完整回归：evidence/tests-stability-20261114-60.result.json（202项通过）
+汇报材料：reports/scene2-20261114/；证据、归档、报告均在DATA盘。
+已核验清理605217656字节重复容器追踪文件，DATA原件保留。
+最近额度使用87%，约剩13%；未使用重置卡，未发现可调用入口。
+
+后续待办（目前不执行）：修正C落箱边界判定；完成最终视觉复核及同源码seed1/2完整验证。
+历史进度：reports/scene2-20261114/progress-history-through-v48.txt

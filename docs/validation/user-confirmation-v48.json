@@ -1,0 +1,17 @@
+{
+  "status": "stopped_at_user_request",
+  "candidate_version": 48,
+  "run": "accept-stability-20261114-48-six-s0",
+  "user_confirmed_completed": 6,
+  "automated_ledger_completed": 5,
+  "user_assessment": "实际6/6，自动判断错误",
+  "diagnosis": "末段七帧均检出两件C；其中一件的估计轮廓余量从3.12mm波动至-0.19mm，六帧未满足现有3mm包含阈值，故自动账本停在5/6。边界估计/判定尚未修正。",
+  "elapsed_s": 2848.2084776300035,
+  "regression_tests_passed": 202,
+  "unperformed": [
+    "生产最终五帧及独立更新五帧",
+    "seed1完整验收",
+    "seed2完整验收"
+  ],
+  "source_sha256": "a300fa681d9f2ecc829b37883707d18d5645503cfae42a3a00c68d03f1125cdb"
+}

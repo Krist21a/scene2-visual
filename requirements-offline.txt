@@ -1,0 +1,7 @@
+# Verified offline replay environment; Python 3.12 recommended.
+# OpenCV 4.11 supports NumPy 1.26. Production used OpenCV 4.13 with
+# an unsatisfied declared NumPy>=2 requirement; see environment notes.
+numpy==1.26.4
+scipy==1.15.3
+opencv-python-headless==4.11.0.86
+PyYAML==6.0.3

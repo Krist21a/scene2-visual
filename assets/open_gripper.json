@@ -1,0 +1,98 @@
+{
+  "source_mesh_sha256": "633793332c081641ce200df27a40643cc293b29956e3cb5cb29cb811c33ef1c7",
+  "units": "metres",
+  "configuration": "open_driver_zero",
+  "positive_finger": [
+    {
+      "center": [
+        0.052233,
+        0.0,
+        0.003543
+      ],
+      "half": [
+        0.0034070000000000003,
+        0.007045,
+        0.001458
+      ],
+      "source": "follower_convex_hull_slab"
+    },
+    {
+      "center": [
+        0.0537295,
+        0.0,
+        0.01
+      ],
+      "half": [
+        0.0065155000000000005,
+        0.007196,
+        0.005001
+      ],
+      "source": "follower_convex_hull_slab"
+    },
+    {
+      "center": [
+        0.0552265,
+        0.0,
+        0.02
+      ],
+      "half": [
+        0.009624500000000005,
+        0.007348,
+        0.005000999999999999
+      ],
+      "source": "follower_convex_hull_slab"
+    },
+    {
+      "center": [
+        0.0580285,
+        0.0,
+        0.0324995
+      ],
+      "half": [
+        0.013730500000000003,
+        0.0075,
+        0.0075005
+      ],
+      "source": "follower_convex_hull_slab"
+    },
+    {
+      "center": [
+        0.059247499999999995,
+        0.0,
+        0.0462985
+      ],
+      "half": [
+        0.014949500000000001,
+        0.0075,
+        0.0062984999999999985
+      ],
+      "source": "follower_convex_hull_slab"
+    },
+    {
+      "center": [
+        0.0467,
+        0,
+        0.004955
+      ],
+      "half": [
+        0.004,
+        0.011,
+        0.009375
+      ],
+      "source": "public_pad_box"
+    },
+    {
+      "center": [
+        0.0467,
+        0,
+        0.023705
+      ],
+      "half": [
+        0.004,
+        0.011,
+        0.009375
+      ],
+      "source": "public_pad_box"
+    }
+  ]
+}
