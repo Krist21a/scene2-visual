@@ -6,7 +6,7 @@
 
 `python3 recovery/verify.py` 检查原候选 48 的全部 230 个受控文件；`--runtime` 进一步检查附件中的实际运行文件。无需原机器的 `/home/krist`、`/media/krist/Data` 或旧容器来取回这些内容。旧报告里保留的绝对路径是来源记录，不是离线测试依赖。
 
-不备份 Docker 镜像（用户明确要求）、操作系统、GPU 驱动和全部历史录像。删除后要运行仿真，需要联网重新获取官方镜像/ROS 工作区和系统依赖。未进行删除整机环境后的端到端抓取重装测试，不能把代码恢复验证表述为所有硬件、所有外部下载源永久可用。
+不备份 Docker 镜像（用户明确要求）、操作系统、GPU 驱动和全部历史录像。删除后要运行仿真，需要重新获取官方镜像和系统依赖；官方 ROS 工作区源码已作为 Git 归档保存在本仓库 Release，编译产物需要按下文重建。未进行删除整机环境后的端到端抓取重装测试，不能把代码恢复验证表述为所有硬件、所有外部下载源永久可用。
 
 ## 2. 取回代码和附件
 
@@ -49,16 +49,25 @@ bash recovery/run_tests.sh
 
 官方工作区来源：<https://gitcode.com/OpenLET/leju-kuavo-challenge-cup-2026.git>
 
-本次工作区提交：`51b3defaf8c032957647c7aa193d1fa20daef1f3`。原工作区 Git 源码未修改；控制器二进制部署在 `devel/` 中，必须单独恢复本仓库提供的 A/C 文件。
+本次工作区提交：`51b3defaf8c032957647c7aa193d1fa20daef1f3`。优先从本仓库附件恢复固定源码：
+
+```bash
+python3 recovery/download_assets.py --simulator
+git clone downloads/scene2-simulator-51b3def.bundle simulator-workspace
+cd simulator-workspace
+git checkout 51b3defaf8c032957647c7aa193d1fa20daef1f3
+```
+
+该 Git bundle 自包含全部所需历史/对象，不含原工作区的 `.git/config`、凭据、构建日志或 Docker 层。源码内第三方 DDS 测试附带的公开测试密钥属于其上游测试夹具，不是用户凭据。
+
+原工作区 Git 源码未修改；控制器二进制部署在 `devel/` 中，必须单独恢复本仓库提供的 A/C 文件。
 
 官方镜像下载地址取自该提交的 `readme.md`：
 
 ```bash
 wget https://kuavo.lejurobot.com/challenge_cup_2026/kuavo_challenge_cup_2026_latest.tar.gz
 docker load -i kuavo_challenge_cup_2026_latest.tar.gz
-git clone https://gitcode.com/OpenLET/leju-kuavo-challenge-cup-2026.git
-cd leju-kuavo-challenge-cup-2026
-git checkout 51b3defaf8c032957647c7aa193d1fa20daef1f3
+# 进入上一步从 Git bundle 恢复的 simulator-workspace。
 ./docker/run_with_gpu_for_challenge.sh
 ```
 
@@ -76,7 +85,15 @@ source devel/setup.zsh
 
 宿主机需要 NVIDIA 驱动、NVIDIA Container Toolkit、Docker、X11，以及 `python3`、`gh`、`git`、`ffmpeg`、`xdotool`、`xauth`。记录程序当前假设显示器为 `:0`。
 
-原仿真容器使用 host 网络、host IPC、GPU，并将官方工作区挂载到 `/root/kuavo_ws`、X11 socket 挂载到 `/tmp/.X11-unix`。原策略容器使用 host 网络、GPU。不要把本机 `.config`、GitHub 令牌或旧 Xauthority 当作代码备份；新机器重新生成自己的显示授权。
+原仿真容器使用 host 网络、host IPC、GPU，并将官方工作区挂载到 `/root/kuavo_ws`、X11 socket 挂载到 `/tmp/.X11-unix`。原策略容器使用 host 网络、GPU。在已导入官方镜像后，可创建新的策略容器再按第5节安装 Python/SDK：
+
+```bash
+sudo docker run -dit --name kuavo-ros-noetic-s12-ready --network host --gpus all kuavo_challenge_cup_2026:latest bash
+```
+
+若官方启动脚本给仿真容器分配了其他名字，使用 `docker ps` 确认新容器后将其改名为 `kuavo_challenge_container_GPU_046e4301`。不要覆盖已有同名容器。
+
+不要把本机 `.config`、GitHub 令牌或旧 Xauthority 当作代码备份；新机器重新生成自己的显示授权。
 
 ## 5. 策略 Python/SDK 环境
 

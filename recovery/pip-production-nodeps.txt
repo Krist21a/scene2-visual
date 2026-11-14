@@ -48,7 +48,6 @@ joblib==1.5.3
 jsonlines==4.0.0
 kornia==0.8.2
 kornia-rs==0.1.14
-kuavo-humanoid-sdk==1.3.3
 lerobot==0.5.2
 markdown==3.10.2
 markdown-it-py==4.2.0

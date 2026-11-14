@@ -25,7 +25,7 @@ bash recovery/run_tests.sh
 
 普通 `git clone` 包含完整策略源码、继承的 Scene1 Python 代码、230 个受校验文件、全部 202 项测试及其 RGB-D/URDF/JSON 夹具。运行附件放在同仓库 [Release](https://github.com/Krist21a/scene2-visual/releases/tag/scene2-v48-20261115)，由脚本校验 SHA-256 后恢复；不要只下载网页中的单个 Python 文件。
 
-**Docker 镜像按用户要求不上传。** 离线测试不需要 Docker 或 ROS；启动官方仿真仍需重新准备官方 Docker 镜像、NVIDIA 驱动/容器工具及 ROS 工作区。镜像名称、官方下载地址、原工作区提交号、容器参数和重建步骤见 [完整恢复说明](docs/RECOVERY.md)。本机自建镜像 `kuavo-ros-noetic:s1-s2-tested` 没有公开下载地址，不能假定 `docker pull` 能找到它。
+**Docker 镜像按用户要求不上传。** 离线测试不需要 Docker 或 ROS；启动官方仿真仍需重新准备官方 Docker 镜像、NVIDIA 驱动/容器工具及编译后的 ROS 工作区。镜像名称、官方下载地址、原工作区提交号、容器参数和重建步骤见 [完整恢复说明](docs/RECOVERY.md)。本机自建镜像 `kuavo-ros-noetic:s1-s2-tested` 没有公开下载地址，不能假定 `docker pull` 能找到它。
 
 ## 保存内容
 
@@ -34,6 +34,7 @@ bash recovery/run_tests.sh
 - `tests/fixtures/`：回放所需文件，均为实际文件，不依赖原 DATA 盘链接。
 - `docs/validation/`：原冻结清单、回归日志、seed0 自动结果、人工 6/6 确认和边界诊断。
 - Release 的 `runtime` 附件：A/C 控制器及回退文件、LeTools 部署代码/修改、Kuavo SDK 1.3.3 实际源码。
+- Release 的 `simulator` 附件：官方仿真工作区固定提交的完整 Git 归档，不含 Docker 镜像；无需原本机工作区即可克隆恢复。
 - Release 的 `wheels` 附件：离线回归所需的 CPython 3.12 Linux x86_64 wheels。
 - Release 的 `evidence` 附件：候选 48 本轮完整录像、RGB-D、事件和运行来源记录。按需下载：`python3 recovery/download_assets.py --evidence`。
 

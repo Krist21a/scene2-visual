@@ -41,8 +41,9 @@ def main():
     parser.add_argument('--runtime', action='store_true', help='A/C controllers and deployment SDK source')
     parser.add_argument('--wheels', action='store_true', help='CPython 3.12 Linux x86_64 offline test wheels')
     parser.add_argument('--evidence', action='store_true', help='Latest full-run video and raw evidence')
+    parser.add_argument('--simulator', action='store_true', help='Pinned official simulator Git bundle; no Docker image')
     args = parser.parse_args()
-    selected = {key for key in ('runtime', 'wheels', 'evidence') if getattr(args, key)} or {'runtime', 'wheels'}
+    selected = {key for key in ('runtime', 'wheels', 'evidence', 'simulator') if getattr(args, key)} or {'runtime', 'wheels'}
     manifest = json.loads((ROOT/'recovery/release-assets.json').read_text())
     downloads = ROOT/'downloads'
     downloads.mkdir(exist_ok=True)
