@@ -1,0 +1,26 @@
+[
+  {
+    "name": "scene2-v48-runtime.tar.gz",
+    "size": 119818113,
+    "state": "uploaded",
+    "server_digest": "sha256:91b8f0368a935d5fb2741d0d6c7668bf6ddf92149d048eb4844a203d38984b09"
+  },
+  {
+    "name": "scene2-v48-offline-wheels.tar.gz",
+    "size": 104903290,
+    "state": "uploaded",
+    "server_digest": "sha256:83577acaedaf7e08397123cbe85d47c494f0bd3b05987055a6791b61268b1b83"
+  },
+  {
+    "name": "scene2-v48-evidence.tar.gz",
+    "size": 109753127,
+    "state": "uploaded",
+    "server_digest": "sha256:9a64ebf794146d31bb3956da71d57428302c1d253b22ad9aabb9d2a40a72987d"
+  },
+  {
+    "name": "scene2-v48-simulator-bundle.tar.gz",
+    "size": 889389726,
+    "state": "uploaded",
+    "server_digest": "sha256:bd76da111a850bcca8437c990a81e8651f96669b565865b5a8a30f39457b6421"
+  }
+]

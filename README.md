@@ -39,6 +39,8 @@ bash recovery/run_tests.sh
 - Release 的 `wheels` 附件：离线回归所需的 CPython 3.12 Linux x86_64 wheels。
 - Release 的 `evidence` 附件：候选 48 本轮完整录像、RGB-D、事件和运行来源记录。按需下载：`python3 recovery/download_assets.py --evidence`。
 
+恢复实测：四个 Release 附件均已从 GitHub 实际下载并校验；官方仿真 Git bundle 已克隆到新目录，提交号及 `git fsck` 通过，详见 [GitHub 恢复回执](docs/validation/github-recovery-result.json)。Docker 镜像重建和新的物理抓取不在这次恢复验证范围内。
+
 源码摘要：`a300fa681d9f2ecc829b37883707d18d5645503cfae42a3a00c68d03f1125cdb`。
 
 原有运动保护和落箱阈值没有因打包而修改；本次上传不继续抓取开发。历史所有失败轮次、全部旧录像、整套主机系统和 Docker 镜像不在此备份范围。

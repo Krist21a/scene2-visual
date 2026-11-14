@@ -1,0 +1,37 @@
+{
+  "status": "passed",
+  "repository": "Krist21a/scene2-visual",
+  "policy_source_sha256": "a300fa681d9f2ecc829b37883707d18d5645503cfae42a3a00c68d03f1125cdb",
+  "verified_runtime_files": 1534,
+  "downloaded_assets": [
+    {
+      "kind": "runtime",
+      "name": "scene2-v48-runtime.tar.gz",
+      "size": 119818113,
+      "sha256": "91b8f0368a935d5fb2741d0d6c7668bf6ddf92149d048eb4844a203d38984b09"
+    },
+    {
+      "kind": "wheels",
+      "name": "scene2-v48-offline-wheels.tar.gz",
+      "size": 104903290,
+      "sha256": "83577acaedaf7e08397123cbe85d47c494f0bd3b05987055a6791b61268b1b83"
+    },
+    {
+      "kind": "evidence",
+      "name": "scene2-v48-evidence.tar.gz",
+      "size": 109753127,
+      "sha256": "9a64ebf794146d31bb3956da71d57428302c1d253b22ad9aabb9d2a40a72987d"
+    },
+    {
+      "kind": "simulator",
+      "name": "scene2-v48-simulator-bundle.tar.gz",
+      "size": 889389726,
+      "sha256": "bd76da111a850bcca8437c990a81e8651f96669b565865b5a8a30f39457b6421",
+      "upstream_commit": "51b3defaf8c032957647c7aa193d1fa20daef1f3"
+    }
+  ],
+  "simulator_restored_commit": "51b3defaf8c032957647c7aa193d1fa20daef1f3",
+  "simulator_git_fsck": "passed",
+  "docker_images_included": false,
+  "scope": "Fresh GitHub clone, all four release archives actually downloaded and SHA-256 verified; simulator Git bundle cloned and checked. No fresh Docker build or new physical trial performed."
+}
