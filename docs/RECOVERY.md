@@ -100,7 +100,7 @@ sudo docker run -dit --name kuavo-ros-noetic-s12-ready --network host --gpus all
 
 策略容器须具有 ROS Noetic（`/opt/ros/noetic/setup.bash`），Miniforge 安装到 `/root/miniforge3`，策略环境路径固定为 `/root/miniforge3/envs/kls_dev`。Miniforge 官方来源：<https://github.com/conda-forge/miniforge>。
 
-将恢复后的仓库复制到新策略容器 `/root/scene2-visual`。在全新环境中执行：
+将恢复后的仓库复制到新策略容器 `/root/scene2-visual`，例如在宿主机仓库根目录执行 `sudo docker cp . kuavo-ros-noetic-s12-ready:/root/scene2-visual`，然后进入策略容器。在全新环境中执行：
 
 ```bash
 cd /root/scene2-visual
@@ -129,6 +129,8 @@ sudo docker cp /tmp/scene2-restore.Xauthority kuavo_challenge_container_GPU_046e
 ```
 
 `tools/workstation.py` 本身固定使用 `DISPLAY=:0`；其他显示编号需要先适配工具。不要上传 Xauthority 文件。
+
+当前 `tools/workstation.py` 调用 `sudo -n docker`，因此宿主机须允许该 Docker 命令免密执行，或在有权限且保留桌面显示环境的 root 会话运行工具。这里记录原工具的实际前提，不会自动修改系统 sudo 配置。
 
 确认容器名和环境齐全后，在宿主机仓库：
 
