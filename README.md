@@ -6,7 +6,7 @@
 [![Regression Tests](https://img.shields.io/badge/离线回归测试-202%2F202_Passed-2dd4bf?style=flat-square)](docs/validation/clean-recovery-result.json)
 [![Round-Trip Verified](https://img.shields.io/badge/GitHub_冷备恢复-SHA256_全量校验通过-6366f1?style=flat-square)](docs/validation/github-recovery-result.json)
 
-> **制作者手记**：这是我为 **Kuavo（夸父）双臂人形机器人挑战赛 Scene2 视觉分拣任务** 独立设计、迭代并冻结的第 48 版（`scene2-v48-20261115`）完整工程仓库。
+> **制作者手记**：这是我为 **Kuavo双臂人形机器人挑战赛 Scene2 视觉分拣任务** 独立设计、迭代并冻结的第 48 版（`scene2-v48-20261115`）完整工程仓库。
 >
 > 在这个项目里，我给自己立下了三条铁律：**绝不读取仿真器物体真值（MuJoCo `qpos`）**、**绝不跳过任何一步运动学与碰撞净空护栏**、**绝不美化或篡改任何一次实验的原始自动回执**。本仓库不仅保存了当前候选 v48 的全套感知、规划、控制源码与 202 项真实场景回归夹具，还构建了一套经受过“全新环境冷启动回拉校验”的灾难恢复体系。
 
