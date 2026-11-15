@@ -41,12 +41,14 @@ Throughout iterations `v30` to `v48` ([`docs/development-README.md`](https://git
 
 | `seed0` 最终 6 件全部落箱实测画面<br/>*`seed0` Final 6-Part Sorting Snapshot (`docs/assets/seed0-final.png`)* | 从 v30 到 v48 的工程挑战演进全景<br/>*Engineering Challenge Evolution (`docs/assets/challenge-evolution.svg`)* |
 | :---: | :---: |
-|  |  |
+| ![seed0 Final 6-Part Sorting Snapshot](docs/assets/seed0-final.png) | ![Engineering Challenge Evolution](docs/assets/challenge-evolution.svg) |
 | **物理 6/6 落箱完成状态**：`v48` 在 `seed0` 下从空箱起跑，按 **A $\rightarrow$ B $\rightarrow$ C** 优先级依次将 2 件白色支架（A）、2 件深色块（B）、2 把红柄螺丝刀（C）全部投入对应料箱（详见 [docs/validation/user-confirmation-v48.json](https://www.google.com/search?q=https://github.com/Krist21a/scene2-visual/blob/main/docs/validation/user-confirmation-v48.json) 与 [docs/validation/seed0-summary.json](https://www.google.com/search?q=https://github.com/Krist21a/scene2-visual/blob/main/docs/validation/seed0-summary.json)）。<br/><br/>*Physical 6/6 completion in `seed0`: 2 White Brackets (A), 2 Dark Blocks (B), and 2 Red-Handled Screwdrivers (C) sorted into their target bins from an empty start.* | **核心痛点攻关路径**：直观展示了从透明料箱深度修复、掌内载荷三维重估、SLSQP 软硬约束释放优化到双 C 金属杆 RANSAC 解耦的迭代突破过程。<br/><br/>*Visualizes the iterative breakthroughs across transparent bin geometry, in-hand 3D payload re-estimation, SLSQP soft/hard constraint optimization, and dual-C RANSAC shaft decoupling.* |
 
 此外，仓库还提供了完整的系统流水线矢量图 [docs/assets/architecture-pipeline.svg](https://www.google.com/search?q=https://github.com/Krist21a/scene2-visual/blob/main/docs/assets/architecture-pipeline.svg)：
 
 
+
+![System Architecture Pipeline](docs/assets/architecture-pipeline.svg)
 
 ## 3. 系统架构与工作流 / Architecture & Workflow
 
