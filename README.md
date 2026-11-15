@@ -1,4 +1,4 @@
-# Scene2 视觉抓取与分拣系统 · 候选 v48 工程归档
+# Scene2 视觉抓取与分拣系统 · v48 工程归档
 
 [![Candidate](https://img.shields.io/badge/Candidate-v48_Frozen-0284c7?style=flat-square)](#)
 [![Physical Result](https://img.shields.io/badge/Seed0_物理实测-6%2F6_全部落箱_(人工确认)-10b981?style=flat-square)](docs/validation/user-confirmation-v48.json)
@@ -140,7 +140,7 @@ bash recovery/run_tests.sh
   python3 recovery/download_assets.py --evidence
   ```
 - **需要重建完整的双容器物理仿真环境（MuJoCo + ROS Noetic + Kuavo MPC/WBC）？**
-  按要求，数 GB 的 Docker 镜像层不直接上传至 GitHub。我已在 [`docs/RECOVERY.md`](docs/RECOVERY.md) 中详细记录了官方仿真镜像下载地址、固定镜像 ID（`sha256:8eafa6a8...`）、从 Release 中的 Git bundle 恢复 `/root/kuavo_ws` 并执行 `catkin build` 的编译指令、A/C 控制器哈希校验替换（`select_controller.py ac --apply`）以及 X11 显示授权生成步骤。
+  数 GB 的 Docker 镜像层不直接上传至 GitHub。我已在 [`docs/RECOVERY.md`](docs/RECOVERY.md) 中详细记录了官方仿真镜像下载地址、固定镜像 ID（`sha256:8eafa6a8...`）、从 Release 中的 Git bundle 恢复 `/root/kuavo_ws` 并执行 `catkin build` 的编译指令、A/C 控制器哈希校验替换（`select_controller.py ac --apply`）以及 X11 显示授权生成步骤。
 
 ## 5. 诚实边界与后续路线图
 
